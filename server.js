@@ -15,6 +15,9 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 
+const userRoutes = require('./routes/user');
+app.use('/api', userRoutes);
+
 const port = process.env.PORT || 8000;
 
 // Connect to database
