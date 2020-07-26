@@ -5,7 +5,7 @@ module.exports.connectDb = async () => {
     await mongoose.connect(process.env.DATABASE, {
       useNewUrlParser: true,
       useCreateIndex: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
       useUnifiedTopology: true,
     });
     console.log('Database connected successfully');
