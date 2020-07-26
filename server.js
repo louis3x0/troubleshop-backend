@@ -15,8 +15,18 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 
+// Import routes
+
+const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const productRoutes = require('./routes/product');
+const categoryRoutes = require('./routes/category');
+
+// Routes
+
+app.use('/api', authRoutes);
 app.use('/api', userRoutes);
+app.use('/api', productRoutes);
 
 const port = process.env.PORT || 8000;
 

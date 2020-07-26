@@ -11,6 +11,7 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
   });
 });
 
+// Run the middleware finduserById when there is a param of :userId
 router.param('userId', userById);
 
 module.exports = router;
